@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { CarCard, Home, ShowMore } from "@/components";
 import { PageProps } from "@/types";
@@ -9,50 +7,50 @@ import CustomFilter from "@/components/CustomFilter";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
 
-// export default async function Page({ searchParams }: PageProps) {
-export default function Page() {
-  // const allCars = await fetchCars({
-  //   manufacturer: searchParams.manufacturer || "",
-  //   year: searchParams.year || 2022,
-  //   fuel: searchParams.fuel || "",
-  //   limit: searchParams.limit || 10,
-  //   model: searchParams.model || "",
-  // });
-  const [allCars, setallCars] = useState([]);
-  const [loading, setLoading] = useState(false);
+export default async function Page({ searchParams }: PageProps) {
+//export default function Page() {
+const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
+  // const [allCars, setallCars] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   //search states
-  const [manufacturer, setManufacturer] = useState("");
-  const [model, setModel] = useState("");
+  // const [manufacturer, setManufacturer] = useState("");
+  // const [model, setModel] = useState("");
   //filter states
-  const [fuel, setFuel] = useState("");
-  const [year, setYear] = useState(2022);
+  // const [fuel, setFuel] = useState("");
+  // const [year, setYear] = useState(2022);
   //pagination states
-  const [limit, setLimit] = useState(10);
+  // const [limit, setLimit] = useState(10);
 
-  const getCars = async () => {
-    setLoading(true);
+  // const getCars = async () => {
+    // setLoading(true);
 
-    try {
-      const result = await fetchCars({
-        manufacturer: manufacturer || "",
-        year: year || 2022,
-        fuel: fuel || "",
-        limit: limit || 10,
-        model: model || "",
-      });
-      setallCars(result);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //   try {
+  //     const result = await fetchCars({
+  //       manufacturer: manufacturer || "",
+  //       year: year || 2022,
+  //       fuel: fuel || "",
+  //       limit: limit || 10,
+  //       model: model || "",
+  //     });
+  //     setallCars(result);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    console.log(fuel, year, limit, manufacturer, model);
-    getCars();
-  }, [fuel, year, limit, manufacturer, model]);
+  // useEffect(() => {
+  //   console.log(fuel, year, limit, manufacturer, model);
+  //   getCars();
+  // }, [fuel, year, limit, manufacturer, model]);
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
@@ -67,23 +65,27 @@ export default function Page() {
         </div>
         <div className="home__filters">
           <SearchBar 
-            setManufacturer={setManufacturer}
-            setModel={setModel}
+            // setManufacturer={setManufacturer}
+            // setModel={setModel}
           />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" options={fuels} setFilter={setFuel}/>
-            <CustomFilter title="year" options={yearsOfProduction} setFilter={setYear}/>
+            <CustomFilter title="fuel" options={fuels} 
+            // setFilter={setFuel}
+            />
+            <CustomFilter title="year" options={yearsOfProduction}
+            // setFilter={setYear}
+            />
           </div>
         </div>
-        {/* {!isDataEmpty ? ( */}
-        {allCars.length>0?(
+        {/* {allCars.length>0?( */}
+        {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
                 <CarCard car={car} />
               ))}
             </div>
-            {loading &&(
+            {/* {loading &&(
               <div className="mt-16 w-full flex-center">
                 <Image
                 src="/tire.svg"
@@ -93,14 +95,14 @@ export default function Page() {
                 className="object-contain"
                 />
               </div>
-            )}
+            )} */}
             {true ? (
               <ShowMore
-                // pageNumber={(searchParams.limit || 10) / 10}
-                // isNext={(searchParams.limit || 10) > allCars.length}
-                pageNumber={(limit) / 10}
-                isNext={(limit) > allCars.length}
-                setLimit={setLimit}
+                pageNumber={(searchParams.limit || 10) / 10}
+                isNext={(searchParams.limit || 10) > allCars.length}
+                // pageNumber={(limit) / 10}
+                // isNext={(limit) > allCars.length}
+                // setLimit={setLimit}
               />
             ) : (
               <></>

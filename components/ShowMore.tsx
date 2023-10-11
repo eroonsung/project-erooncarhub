@@ -6,7 +6,9 @@ import React from "react";
 import CustomButton from "./CustomButton";
 import { updateSearchParams } from "@/utils";
 
-const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMoreProps) => {
+const ShowMore = ({ pageNumber, isNext
+  // , setLimit 
+}: ShowMoreProps) => {
   const router = useRouter();
 
   const handleNavigation = () => {
@@ -14,10 +16,10 @@ const ShowMore = ({ pageNumber, isNext, setLimit }: ShowMoreProps) => {
     const newLimit = (pageNumber + 1) * 10;
 
     // Update the "limit" search parameter in the URL with the new value
-    // const newPathname = updateSearchParams("limit", `${newLimit}`);
+    const newPathname = updateSearchParams("limit", `${newLimit}`);
     
-    // router.push(newPathname);
-    setLimit(newLimit);
+    router.push(newPathname);
+    // setLimit(newLimit);
   };
 
   return (
