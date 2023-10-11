@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :green_heart: Eroon Carhub
+:arrow_right: <a href="https://project-erooncarhub-1ubiuw6v0-eroonsungs-projects.vercel.app/" target="_blank">Eroon Carhub</a> 
+![image](https://github.com/eroonsung/project-erooncarhub/assets/77269204/290a8a95-cf41-402d-9982-785fcee0b8a9)
 
-## Getting Started
 
-First, run the development server:
+📌 Search
+<img width="1267" alt="image" src="https://github.com/eroonsung/project-erooncarhub/assets/77269204/bea8b85b-5844-4c90-be6f-dc81955e6e42">
+📌 Details
+<img width="1267" alt="image" src="https://github.com/eroonsung/project-erooncarhub/assets/77269204/04285c30-1a17-4e52-b811-31593aa85b17">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## :computer: Description 설명
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).  
+This web site is for Discover and Compare the rent cars.  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+이 프로젝트는 [Next.js](https://nextjs.org/) 를 사용하였습니다.  
+이 페이지는 렌트카를 검색하고 비교할 수 있는 사이트이며 렌트카 선택 시 해당 렌트카의 상세정보를 확인할 수 있습니다..
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## :gear: Built With 개발 환경
+- Next.js
+- React
+- Tailwind CSS
+- Rapid Api(Cars by API-Ninjas)
+- Vercel
